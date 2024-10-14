@@ -63,7 +63,7 @@ const BottomNavbar = () => {
           <input
             onChange={handleSearchInput}
             type="text"
-            placeholder="Search for Product"
+            placeholder="Search for Products, Brands, Categories"
             className="w-full bg-transparent outline-none text-[#C4C4C4] text-sm sm:text-base"
           />
         </div>
