@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { FaAngleDown, FaAngleUp } from "react-icons/fa";
 
-import Logo from "../../../assets/customer/logos/Logo.svg";
+import Logo from "../../assets/logos/Logo.svg";
 import TopNavbar from "./TopNavbar";
 import BottomNavbar from "./BottomNavbar";
 import Categories from "./mobile/Categories";
