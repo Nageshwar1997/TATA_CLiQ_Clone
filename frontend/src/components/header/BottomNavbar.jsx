@@ -9,22 +9,19 @@ import LevelTwoThreeCategoryList from "./navLink/LevelTwoThreeCategoryList";
 import LevelTwoThreeBrandList from "./navLink/LevelTwoThreeBrandList";
 
 const BottomNavbar = () => {
-  const [categoryDropdown, setCategoryDropdown] = useState(true);
+  const [categoryDropdown, setCategoryDropdown] = useState(false);
   const [brandDropdown, setBrandDropdown] = useState(false);
   const [selectedCategoryIndex, setSelectedCategoryIndex] = useState(0);
   const [selectedBrandIndex, setSelectedBrandIndex] = useState(0);
-  const [expandedCategory, setExpandedCategory] = useState(0); // New state to track expanded categories
 
   const handleCategoryClick = (index) => {
     setSelectedCategoryIndex(index);
-    setExpandedCategory(expandedCategory === index ? null : index); // Toggle expansion
   };
 
   const handleBrandClick = (index) => {
     setSelectedBrandIndex(index);
   };
 
-  const handleSearchInput = () => {};
 
   return (
     <div className="relative flex justify-between items-center gap-2 lg:gap-0 text-base sm:text-lg font-semibold text-white w-full h-[60px] sm:pr-2 md:pr-4">
@@ -61,7 +58,6 @@ const BottomNavbar = () => {
         <IoIosSearch className="absolute top-1/2 right-2 sm:right-4 -translate-y-1/2  text-[#C4C4C4] font-semibold text-lg sm:text-xl cursor-pointer" />
         <div className="w-full">
           <input
-            onChange={handleSearchInput}
             type="text"
             placeholder="Search for Products, Brands, Categories"
             className="w-full bg-transparent outline-none text-[#C4C4C4] text-sm sm:text-base"
@@ -110,10 +106,9 @@ const BottomNavbar = () => {
 
           {/* Level Two and Level Three Items */}
           <div className="h-[100vh] sm:h-[85vh] w-full sm:w-[calc(100%-20%)] px-4 flex flex-col gap-2 flex-wrap">
-            {expandedCategory === selectedCategoryIndex &&
-              categories[selectedCategoryIndex].items.map((item) => (
-                <LevelTwoThreeCategoryList key={item.levelTwo} item={item} />
-              ))}
+            {categories[selectedCategoryIndex].items.map((item) => (
+              <LevelTwoThreeCategoryList key={item.levelTwo} item={item} />
+            ))}
           </div>
         </div>
       )}
@@ -155,14 +150,18 @@ const BottomNavbar = () => {
           </div>
 
           {/* Brand Images */}
-          <div className="hidden sm:grid w-full sm:w-[35%] md:w-[30%] lg:w-[25%] grid-cols-2 place-content-start gap-4 md:gap-6 bg-gray-50 shadow p-2">
+          <div className="hidden sm:grid w-full sm:w-[35%] md:w-[30%] lg:w-[25%] grid-cols-2 place-content-start gap-4 md:gap-6 bg-gray-50 shadow p-4">
             {brands[selectedBrandIndex].brandImages.map((image) => (
-              <img
+              <div
                 key={image.alt}
-                src={image.url}
-                alt={image.alt}
-                className="object-cover w-full h-full p-2 rounded-full cursor-pointer hover:object-scale-down mix-blend-multiply hover:scale-110 transform transition-transform duration-300 ease-in-out shadow-md"
-              />
+                className="relative flex items-center justify-center cursor-pointer p-2 rounded-full transition-transform duration-300 ease-in-out hover:scale-110"
+              >
+                <img
+                  src={image.url}
+                  alt={image.alt}
+                  className="object-cover w-full h-full rounded-full transition-transform duration-300 ease-in-out"
+                />
+              </div>
             ))}
           </div>
         </div>

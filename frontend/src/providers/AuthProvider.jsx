@@ -11,8 +11,8 @@ const AuthProvider = ({ children }) => {
 
   const checkAuthentication = async () => {
     // Fetch user authentication status (modify as needed)
-    const response = await fetch(SummaryApi.current_user.url, {
-      method: SummaryApi.current_user.method,
+    const response = await fetch("SummaryApi.current_user.url", {
+      method: "SummaryApi.current_user.method",
       credentials: "include",
     });
     const data = await response.json();
@@ -20,7 +20,7 @@ const AuthProvider = ({ children }) => {
   };
 
   useEffect(() => {
-    checkAuthentication();
+    // checkAuthentication();
   }, []);
 
   return (
@@ -29,3 +29,5 @@ const AuthProvider = ({ children }) => {
     </AuthContext.Provider>
   );
 };
+
+export { useAuth, AuthProvider };
