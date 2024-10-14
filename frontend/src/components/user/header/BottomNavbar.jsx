@@ -7,10 +7,9 @@ import categories from "./data/categories";
 import brands from "./data/brands";
 import LevelTwoThreeCategoryList from "./navLink/LevelTwoThreeCategoryList";
 import LevelTwoThreeBrandList from "./navLink/LevelTwoThreeBrandList";
-import SearchBar from "./navLink/SearchBar";
 
 const BottomNavbar = () => {
-  const [categoryDropdown, setCategoryDropdown] = useState(false);
+  const [categoryDropdown, setCategoryDropdown] = useState(true);
   const [brandDropdown, setBrandDropdown] = useState(false);
   const [selectedCategoryIndex, setSelectedCategoryIndex] = useState(0);
   const [selectedBrandIndex, setSelectedBrandIndex] = useState(0);
@@ -28,10 +27,10 @@ const BottomNavbar = () => {
   const handleSearchInput = () => {};
 
   return (
-    <div className="relative flex justify-between items-center text-base sm:text-lg font-semibold text-white w-full h-[60px] sm:pr-2 md:pr-4">
+    <div className="relative flex justify-between items-center gap-2 lg:gap-0 text-base sm:text-lg font-semibold text-white w-full h-[60px] sm:pr-2 md:pr-4">
       {/* Categories Dropdown */}
       <div
-        className="hidden relative text-xs sm:text-sm lg:text-lg transition-all duration-300 md:flex items-center space-x-1 sm:space-x-2 h-full px-1 sm:px-2 md:px-4 hover:bg-white hover:text-black cursor-pointer"
+        className="hidden relative text-xs sm:text-sm lg:text-lg transition-all duration-300 sm:flex items-center space-x-1 sm:space-x-2 h-full px-1 sm:px-2 md:px-4 hover:bg-white hover:text-black cursor-pointer"
         onMouseEnter={() => {
           setCategoryDropdown(true);
           setBrandDropdown(false);
@@ -44,7 +43,7 @@ const BottomNavbar = () => {
 
       {/* Brands Dropdown */}
       <div
-        className="hidden relative text-xs sm:text-sm lg:text-lg transition-all duration-300 md:flex items-center space-x-1 sm:space-x-2 h-full px-1 sm:px-2 md:px-4 hover:bg-white hover:text-black cursor-pointer"
+        className="hidden relative text-xs sm:text-sm lg:text-lg transition-all duration-300 sm:flex items-center space-x-1 sm:space-x-2 h-full px-1 sm:px-2 md:px-4 hover:bg-white hover:text-black cursor-pointer"
         onMouseEnter={() => {
           setBrandDropdown(true);
           setCategoryDropdown(false);
@@ -52,37 +51,47 @@ const BottomNavbar = () => {
         onMouseLeave={() => setBrandDropdown(false)}
       >
         <p>Brands</p>
-        <span>{brandDropdown ? <FaAngleUp size={16} /> : <FaAngleDown size={16} />}</span>
+        <span>
+          {brandDropdown ? <FaAngleUp size={16} /> : <FaAngleDown size={16} />}
+        </span>
       </div>
 
       {/* Search Bar and Icons */}
-      <div className="max-w-[70%] flex w-full md:max-w-[60%] bg-[#4A4A4A] rounded-md px-2 sm:px-4 py-1 gap-1 sm:gap-2 items-center">
-        <SearchBar handleSearchInput={handleSearchInput} />
+      <div className="relative max-w-[85%] flex w-full md:max-w-[60%] bg-[#4A4A4A] rounded-md px-2 sm:px-4 py-1 gap-1 sm:gap-2 items-center">
+        <IoIosSearch className="absolute top-1/2 right-2 sm:right-4 -translate-y-1/2  text-[#C4C4C4] font-semibold text-lg sm:text-xl cursor-pointer" />
+        <div className="w-full">
+          <input
+            onChange={handleSearchInput}
+            type="text"
+            placeholder="Search for Product"
+            className="w-full bg-transparent outline-none text-[#C4C4C4] text-sm sm:text-base"
+          />
+        </div>
       </div>
 
       {/* Wishlist Icon */}
-      <div className="cursor-pointer">
-        <CiHeart size={25} />
+      <div className="cursor-pointer text-xl sm:text-2xl md:text-3xl lg:text-4xl text-white">
+        <CiHeart />
       </div>
 
       {/* Handbag Icon */}
-      <div className="cursor-pointer">
-        <PiHandbagLight size={20} />
+      <div className="cursor-pointer text-lg sm:text-xl md:text-2xl lg:text-3xl text-white">
+        <PiHandbagLight />
       </div>
 
       {/* Category Dropdown Menu */}
       {categoryDropdown && (
         <div
-          className="absolute top-[60px] left-[-20%] sm:left-0 w-full text-gray-500 bg-white rounded-lg shadow-lg p-4 flex flex-col sm:flex-row"
+          className="absolute top-[60px] left-0 w-full text-gray-500 bg-white rounded-lg shadow-lg p-4 flex flex-col sm:flex-row"
           onMouseEnter={() => setCategoryDropdown(true)}
           onMouseLeave={() => setCategoryDropdown(false)}
         >
           {/* Level One Categories */}
-          <div className="w-full sm:w-[18%] h-[50vh] sm:h-[80vh] md:border-r border-gray-400 pr-4">
+          <div className="w-full sm:w-[18%] h-[100vh] sm:h-[85vh] md:border-r border-gray-400 pr-4">
             {categories.map((category, index) => (
               <div
                 key={category.levelOne}
-                className={`py-2 md:py-5 cursor-pointer flex items-center justify-between ${
+                className={`py-2 md:py-5 cursor-pointer flex items-center justify-between text-sm lg:text-base ${
                   selectedCategoryIndex === index
                     ? "text-black shadow-md border-none"
                     : "border-b border-gray-400"
@@ -100,12 +109,11 @@ const BottomNavbar = () => {
           </div>
 
           {/* Level Two and Level Three Items */}
-          <div className="h-[50vh] sm:h-[80vh] w-full sm:w-[calc(100%-20%)] px-4 flex flex-col gap-2 flex-wrap">
-            {expandedCategory === selectedCategoryIndex && (
+          <div className="h-[100vh] sm:h-[85vh] w-full sm:w-[calc(100%-20%)] px-4 flex flex-col gap-2 flex-wrap">
+            {expandedCategory === selectedCategoryIndex &&
               categories[selectedCategoryIndex].items.map((item) => (
                 <LevelTwoThreeCategoryList key={item.levelTwo} item={item} />
-              ))
-            )}
+              ))}
           </div>
         </div>
       )}
@@ -118,7 +126,7 @@ const BottomNavbar = () => {
           onMouseLeave={() => setBrandDropdown(false)}
         >
           {/* Level One Brands */}
-          <div className="w-full sm:w-[22%] h-[50vh] sm:h-[80vh] px-4 md:border-r border-gray-400">
+          <div className="w-full sm:w-[22%] h-[100vh] sm:h-[85vh] text-sm lg:text-lg px-4 md:border-r border-gray-400">
             {brands.map((brand, index) => (
               <div
                 key={brand.levelOne}
@@ -140,25 +148,21 @@ const BottomNavbar = () => {
           </div>
 
           {/* Level Two and Level Three Items */}
-          <div className="h-[50vh] sm:h-[80vh] w-full sm:w-[calc(100%-60%)] pt-2 px-2 flex flex-col gap-2 flex-wrap">
+          <div className="h-[100vh] sm:h-[85vh] w-full sm:w-[calc(100%-60%)] pt-2 px-2 flex flex-col gap-2 flex-wrap text-sm lg:text-lg">
             {brands[selectedBrandIndex].items.map((item) => (
               <LevelTwoThreeBrandList key={item.levelTwo} item={item} />
             ))}
           </div>
 
           {/* Brand Images */}
-          <div className="hidden sm:grid w-full sm:w-[35%] grid-cols-2 place-content-start gap-4 bg-gray-50 shadow p-2">
+          <div className="hidden sm:grid w-full sm:w-[35%] md:w-[30%] lg:w-[25%] grid-cols-2 place-content-start gap-4 md:gap-6 bg-gray-50 shadow p-2">
             {brands[selectedBrandIndex].brandImages.map((image) => (
-              <div
+              <img
                 key={image.alt}
-                className="flex flex-col items-center space-y-2 p-2 rounded-full"
-              >
-                <img
-                  src={image.url}
-                  alt={image.alt}
-                  className="w-20 h-20 sm:w-32 sm:h-32 object-contain rounded-full cursor-pointer hover:scale-110 transform transition-transform duration-300 ease-in-out shadow-md"
-                />
-              </div>
+                src={image.url}
+                alt={image.alt}
+                className="object-cover w-full h-full p-2 rounded-full cursor-pointer hover:object-scale-down mix-blend-multiply hover:scale-110 transform transition-transform duration-300 ease-in-out shadow-md"
+              />
             ))}
           </div>
         </div>

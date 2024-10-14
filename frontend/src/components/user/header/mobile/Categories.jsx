@@ -1,57 +1,77 @@
 import React, { useState } from "react";
-import { FaAngleDown, FaAngleUp, FaAngleRight } from "react-icons/fa";
-import { CiHeart } from "react-icons/ci";
-import SearchBar from "../navLink/SearchBar"; // Assuming you still need the SearchBar
-import categories from "../data/categories"; // Your category data
-import LevelTwoThreeCategoryList from "../navLink/LevelTwoThreeCategoryList"; // Component for level two and three categories
+import { FaAngleRight } from "react-icons/fa";
+import categories from "../data/categories";
 
 const Categories = () => {
-  const [categoryDropdown, setCategoryDropdown] = useState(true);
   const [selectedCategoryIndex, setSelectedCategoryIndex] = useState(0);
-  const [expandedCategory, setExpandedCategory] = useState(null);
+  const [selectedSubCategoryIndex, setSelectedSubCategoryIndex] =
+    useState(null);
 
   const handleCategoryClick = (index) => {
     setSelectedCategoryIndex(index);
-    setExpandedCategory(expandedCategory === index ? null : index); // Toggle expanded category
+    setSelectedSubCategoryIndex(null);
+  };
+
+  const handleSubCategoryClick = (index) => {
+    setSelectedSubCategoryIndex(index);
   };
 
   return (
-    <div className="mt-[130px] flex flex-col items-center text-base font-semibold text-white w-full z-50">
-      {/* Categories Dropdown */}
-      <div
-        className="w-full flex justify-between items-center px-4 py-2 bg-black cursor-pointer"
-        onClick={() => setCategoryDropdown(!categoryDropdown)}
-      >
-        <span>Categories</span>
-        <span>{categoryDropdown ? <FaAngleUp /> : <FaAngleDown />}</span>
+    <div className="flex w-full">
+      {/* Left Column - Level One Categories */}
+      <div className="w-1/3 bg-gray-100 p-4">
+        {categories.map((category, index) => (
+          <div
+            key={category.levelOne}
+            className={`cursor-pointer p-2 text-xs rounded-sm ${
+              selectedCategoryIndex === index
+                ? "bg-gray-300 font-bold shadow-md"
+                : ""
+            }`}
+            onClick={() => handleCategoryClick(index)}
+          >
+            {category.label}
+          </div>
+        ))}
       </div>
 
-      {/* Category Dropdown Menu */}
-      {categoryDropdown && (
-        <div className="relative w-full text-gray-500 bg-white rounded-lg shadow-lg flex flex-col p-4">
-          {categories.map((category, index) => (
-            <div
-              key={category.levelOne}
-              className={`py-2 cursor-pointer flex justify-between ${
-                selectedCategoryIndex === index ? "text-black font-bold" : ""
-              }`}
-              onClick={() => handleCategoryClick(index)}
-            >
-              <span>{category.label}</span>
-              {selectedCategoryIndex === index && <FaAngleRight />}
-            </div>
-          ))}
+      {/* Right Column - Level Two and Level Three Categories */}
+      <div className="w-2/3 bg-white p-4">
+        {selectedCategoryIndex !== null && (
+          <div>
+            {categories[selectedCategoryIndex].items.map(
+              (subCategory, index) => (
+                <div key={subCategory.levelTwo}>
+                  <div
+                    className={`cursor-pointer p-1 text-xs ${
+                      selectedSubCategoryIndex === index
+                        ? "bg-gray-200 font-bold"
+                        : ""
+                    }`}
+                    onClick={() => handleSubCategoryClick(index)}
+                  >
+                    {subCategory.label}
+                  </div>
 
-          {/* Level Two Items */}
-          {expandedCategory === selectedCategoryIndex && (
-            <div className="mt-2">
-              {categories[selectedCategoryIndex].items.map((item) => (
-                <LevelTwoThreeCategoryList className="absolute bottom-0 left-0 z-100" key={item.levelTwo} item={item} />
-              ))}
-            </div>
-          )}
-        </div>
-      )}
+                  {/* Level Three Categories */}
+                  {selectedSubCategoryIndex === index && (
+                    <div className="pl-4 mt-2 text-xs">
+                      {subCategory.items.map((item) => (
+                        <div
+                          key={item.levelThree}
+                          className="p-1 text-gray-600"
+                        >
+                          {item.label}
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              )
+            )}
+          </div>
+        )}
+      </div>
     </div>
   );
 };
