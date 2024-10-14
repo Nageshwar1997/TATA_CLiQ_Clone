@@ -4,12 +4,11 @@ import Header from "./components/header/Header";
 
 function App() {
   return (
-    <div className="max-w-screen-2xl max-h-screen min-h-screen w-full h-full">
-      <Header/>
-      <main>
+    <div className="max-w-full max-h-screen min-h-screen w-full h-full">
+      <Header />
+      <main className="w-full h-full scrollbar-none">
         <Outlet />
       </main>
-      <Header />
     </div>
   );
 }

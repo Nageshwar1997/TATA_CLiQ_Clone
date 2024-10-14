@@ -4,40 +4,6 @@ const categories = [
     levelOne: "womens_fashion",
     items: [
       {
-        label: "Shop All Ethnic Wear",
-        levelTwo: "ethnic_wear",
-        items: [
-          {
-            label: "Kurtis & Kurtas",
-            levelThree: "kurtis_and_kurtas",
-          },
-          {
-            label: "Suits",
-            levelThree: "suits",
-          },
-          {
-            label: "Sarees",
-            levelThree: "sarees",
-          },
-          {
-            label: "Lehengas",
-            levelThree: "lehengas",
-          },
-          {
-            label: "Bottoms",
-            levelThree: "bottoms",
-          },
-          {
-            label: "Blouses & Fabrics",
-            levelThree: "blouses_and_fabrics",
-          },
-          {
-            label: "Dupattas",
-            levelThree: "dupattas",
-          },
-        ],
-      },
-      {
         label: "Shop All Western Wear",
         levelTwo: "western_wear",
         items: [
@@ -129,6 +95,42 @@ const categories = [
           },
         ],
       },
+
+      {
+        label: "Shop All Ethnic Wear",
+        levelTwo: "ethnic_wear",
+        items: [
+          {
+            label: "Kurtis & Kurtas",
+            levelThree: "kurtis_and_kurtas",
+          },
+          {
+            label: "Suits",
+            levelThree: "suits",
+          },
+          {
+            label: "Sarees",
+            levelThree: "sarees",
+          },
+          {
+            label: "Lehengas",
+            levelThree: "lehengas",
+          },
+          {
+            label: "Bottoms",
+            levelThree: "bottoms",
+          },
+          {
+            label: "Blouses & Fabrics",
+            levelThree: "blouses_and_fabrics",
+          },
+          {
+            label: "Dupattas",
+            levelThree: "dupattas",
+          },
+        ],
+      },
+
       {
         label: "Lingerie & Lounge Sets",
         levelTwo: "lingerie_and_lounge_sets",
@@ -160,6 +162,28 @@ const categories = [
           {
             label: "Swimwear",
             levelThree: "swimwear",
+          },
+        ],
+      },
+      {
+        label: "Jewellery",
+        levelTwo: "jewellery",
+        items: [
+          {
+            label: "Gold",
+            levelThree: "gold",
+          },
+          {
+            label: "Diamond",
+            levelThree: "diamond",
+          },
+          {
+            label: "Silver",
+            levelThree: "silver",
+          },
+          {
+            label: "Fashion Jewellery",
+            levelThree: "fashion_jewellery",
           },
         ],
       },
@@ -227,28 +251,7 @@ const categories = [
           },
         ],
       },
-      {
-        label: "Jewellery",
-        levelTwo: "jewellery",
-        items: [
-          {
-            label: "Gold",
-            levelThree: "gold",
-          },
-          {
-            label: "Diamond",
-            levelThree: "diamond",
-          },
-          {
-            label: "Silver",
-            levelThree: "silver",
-          },
-          {
-            label: "Fashion Jewellery",
-            levelThree: "fashion_jewellery",
-          },
-        ],
-      },
+
       {
         label: "Watches",
         levelTwo: "watches",
@@ -265,54 +268,6 @@ const categories = [
     label: "Men's Fashion",
     levelOne: "mens_fashion",
     items: [
-      {
-        label: "Tops",
-        levelTwo: "tops",
-        items: [
-          { label: "T-shirts", levelThree: "tshirts" },
-          { label: "Polo T-shirts", levelThree: "polo_tshirts" },
-          { label: "Shirts", levelThree: "shirts" },
-          { label: "Formal Shirts", levelThree: "formal_shirts" },
-          { label: "Sweatshirts", levelThree: "sweatshirts" },
-          { label: "Jackets", levelThree: "jackets" },
-          { label: "Suits", levelThree: "suits" },
-          { label: "Blazers", levelThree: "blazers" },
-        ],
-      },
-      {
-        label: "Bottoms",
-        levelTwo: "bottoms",
-        items: [
-          { label: "Jeans", levelThree: "jeans" },
-          { label: "Chinos", levelThree: "chinos" },
-          { label: "Trousers", levelThree: "trousers" },
-          { label: "Formal Trousers", levelThree: "formal_trousers" },
-          { label: "Shorts", levelThree: "shorts" },
-          { label: "Joggers", levelThree: "joggers" },
-          { label: "Trackpants", levelThree: "trackpants" },
-        ],
-      },
-      {
-        label: "Activewear",
-        levelTwo: "activewear",
-        items: [
-          { label: "T-Shirts & Jerseys", levelThree: "tshirts_and_jerseys" },
-          { label: "Sports Shorts", levelThree: "sports_shorts" },
-          { label: "Sports Jackets", levelThree: "sports_jackets" },
-          { label: "Joggers", levelThree: "joggers_activewear" },
-        ],
-      },
-      {
-        label: "Innerwear",
-        levelTwo: "innerwear",
-        items: [
-          { label: "Boxers", levelThree: "boxers" },
-          { label: "Briefs", levelThree: "briefs" },
-          { label: "Trunks", levelThree: "trunks" },
-          { label: "Vests", levelThree: "vests" },
-          { label: "Night Suits", levelThree: "night_suits" },
-        ],
-      },
       {
         label: "Footwear",
         levelTwo: "footwear",
@@ -344,6 +299,52 @@ const categories = [
         ],
       },
       {
+        label: "Sports & Fitness",
+        levelTwo: "sports_and_fitness",
+        items: [
+          { label: "Fitness Equipment", levelThree: "fitness_equipment" },
+          { label: "Sports Equipment", levelThree: "sports_equipment" },
+          { label: "Treadmill", levelThree: "treadmill" },
+        ],
+      },
+      {
+        label: "Tops",
+        levelTwo: "tops",
+        items: [
+          { label: "T-shirts", levelThree: "tshirts" },
+          { label: "Polo T-shirts", levelThree: "polo_tshirts" },
+          { label: "Shirts", levelThree: "shirts" },
+          { label: "Formal Shirts", levelThree: "formal_shirts" },
+          { label: "Sweatshirts", levelThree: "sweatshirts" },
+          { label: "Jackets", levelThree: "jackets" },
+          { label: "Suits", levelThree: "suits" },
+          { label: "Blazers", levelThree: "blazers" },
+        ],
+      },
+
+      {
+        label: "Activewear",
+        levelTwo: "activewear",
+        items: [
+          { label: "T-Shirts & Jerseys", levelThree: "tshirts_and_jerseys" },
+          { label: "Sports Shorts", levelThree: "sports_shorts" },
+          { label: "Sports Jackets", levelThree: "sports_jackets" },
+          { label: "Joggers", levelThree: "joggers_activewear" },
+        ],
+      },
+      {
+        label: "Innerwear",
+        levelTwo: "innerwear",
+        items: [
+          { label: "Boxers", levelThree: "boxers" },
+          { label: "Briefs", levelThree: "briefs" },
+          { label: "Trunks", levelThree: "trunks" },
+          { label: "Vests", levelThree: "vests" },
+          { label: "Night Suits", levelThree: "night_suits" },
+        ],
+      },
+
+      {
         label: "Bags, Backpacks & Wallets",
         levelTwo: "bags_backpacks_wallets",
         items: [
@@ -365,12 +366,16 @@ const categories = [
         ],
       },
       {
-        label: "Sports & Fitness",
-        levelTwo: "sports_and_fitness",
+        label: "Bottoms",
+        levelTwo: "bottoms",
         items: [
-          { label: "Fitness Equipment", levelThree: "fitness_equipment" },
-          { label: "Sports Equipment", levelThree: "sports_equipment" },
-          { label: "Treadmill", levelThree: "treadmill" },
+          { label: "Jeans", levelThree: "jeans" },
+          { label: "Chinos", levelThree: "chinos" },
+          { label: "Trousers", levelThree: "trousers" },
+          { label: "Formal Trousers", levelThree: "formal_trousers" },
+          { label: "Shorts", levelThree: "shorts" },
+          { label: "Joggers", levelThree: "joggers" },
+          { label: "Trackpants", levelThree: "trackpants" },
         ],
       },
     ],
@@ -461,15 +466,6 @@ const categories = [
     levelOne: "home_and_kitchen",
     items: [
       {
-        label: "Furniture",
-        levelTwo: "furniture",
-        items: [
-          { label: "Living Room", levelThree: "living_room" },
-          { label: "Bedroom", levelThree: "bedroom" },
-          { label: "Dining Room", levelThree: "dining_room" },
-        ],
-      },
-      {
         label: "Bedding & Linen",
         levelTwo: "bedding_and_linen",
         items: [
@@ -498,6 +494,15 @@ const categories = [
           { label: "Bathrobes", levelThree: "bathrobes" },
           { label: "Kids Bath Linen", levelThree: "kids_bath_linen" },
           { label: "Laundry & Storage", levelThree: "laundry_and_storage" },
+        ],
+      },
+      {
+        label: "Furniture",
+        levelTwo: "furniture",
+        items: [
+          { label: "Living Room", levelThree: "living_room" },
+          { label: "Bedroom", levelThree: "bedroom" },
+          { label: "Dining Room", levelThree: "dining_room" },
         ],
       },
       {
@@ -570,20 +575,6 @@ const categories = [
     levelOne: "beauty",
     items: [
       {
-        label: "Fragrance Store",
-        levelTwo: "fragrance_store",
-        items: [
-          { label: "Perfumes", levelThree: "perfumes" },
-          { label: "Gift Sets", levelThree: "gift_sets" },
-          {
-            label: "Deodorants & Anti-Perspirants",
-            levelThree: "deodorants_and_anti_perspirants",
-          },
-          { label: "Body Mists", levelThree: "body_mists" },
-          { label: "All Fragrances", levelThree: "all_fragrances" },
-        ],
-      },
-      {
         label: "Makeup",
         levelTwo: "makeup",
         items: [
@@ -594,28 +585,7 @@ const categories = [
           { label: "All Makeup", levelThree: "all_makeup" },
         ],
       },
-      {
-        label: "Skin",
-        levelTwo: "skin",
-        items: [
-          { label: "Cleansers", levelThree: "cleansers" },
-          {
-            label: "Moisturizers & Serums",
-            levelThree: "moisturizers_and_serums",
-          },
-          {
-            label: "Facial Peels & Masks",
-            levelThree: "facial_peels_and_masks",
-          },
-          { label: "Eye Creams", levelThree: "eye_creams" },
-          { label: "Combo Sets", levelThree: "combo_sets" },
-          { label: "Men's Skin Care", levelThree: "mens_skin_care" },
-          { label: "Natural Skin Care", levelThree: "natural_skin_care" },
-          { label: "K-Skin Care", levelThree: "k_skin_care" },
-          { label: "Derma Skin Care", levelThree: "derma_skin_care" },
-          { label: "All Skin", levelThree: "all_skin" },
-        ],
-      },
+
       {
         label: "Hair",
         levelTwo: "hair",
@@ -681,6 +651,42 @@ const categories = [
           { label: "Men's Grooming Sets", levelThree: "mens_grooming_sets" },
         ],
       },
+      {
+        label: "Skin",
+        levelTwo: "skin",
+        items: [
+          { label: "Cleansers", levelThree: "cleansers" },
+          {
+            label: "Moisturizers & Serums",
+            levelThree: "moisturizers_and_serums",
+          },
+          {
+            label: "Facial Peels & Masks",
+            levelThree: "facial_peels_and_masks",
+          },
+          { label: "Eye Creams", levelThree: "eye_creams" },
+          { label: "Combo Sets", levelThree: "combo_sets" },
+          { label: "Men's Skin Care", levelThree: "mens_skin_care" },
+          { label: "Natural Skin Care", levelThree: "natural_skin_care" },
+          { label: "K-Skin Care", levelThree: "k_skin_care" },
+          { label: "Derma Skin Care", levelThree: "derma_skin_care" },
+          { label: "All Skin", levelThree: "all_skin" },
+        ],
+      },
+      {
+        label: "Fragrance Store",
+        levelTwo: "fragrance_store",
+        items: [
+          { label: "Perfumes", levelThree: "perfumes" },
+          { label: "Gift Sets", levelThree: "gift_sets" },
+          {
+            label: "Deodorants & Anti-Perspirants",
+            levelThree: "deodorants_and_anti_perspirants",
+          },
+          { label: "Body Mists", levelThree: "body_mists" },
+          { label: "All Fragrances", levelThree: "all_fragrances" },
+        ],
+      },
     ],
   },
   {
@@ -707,13 +713,7 @@ const categories = [
           { label: "Home Theatre Systems", levelThree: "home_theatre_systems" },
         ],
       },
-      {
-        label: "Wearables",
-        levelTwo: "wearables",
-        items: [
-          { label: "Premium Smartwatches", levelThree: "premium_smartwatches" },
-        ],
-      },
+
       {
         label: "Personal Care",
         levelTwo: "personal_care",
@@ -754,24 +754,7 @@ const categories = [
           },
         ],
       },
-      {
-        label: "Tech Accessories",
-        levelTwo: "tech_accessories",
-        items: [
-          {
-            label: "Shop All Tech Accessories",
-            levelThree: "shop_all_tech_accessories",
-          },
-          {
-            label: "Fast & Wireless Chargers",
-            levelThree: "fast_and_wireless_chargers",
-          },
-          { label: "Power Banks", levelThree: "power_banks" },
-          { label: "Storage Devices", levelThree: "storage_devices" },
-          { label: "Cables & Connectors", levelThree: "cables_and_connectors" },
-          { label: "Memory Cards", levelThree: "memory_cards" },
-        ],
-      },
+
       {
         label: "Smart Gadgets",
         levelTwo: "smart_gadgets",
@@ -793,6 +776,31 @@ const categories = [
           { label: "Smart Plugs", levelThree: "smart_plugs" },
           { label: "Extension Board", levelThree: "extension_board" },
           { label: "Torches", levelThree: "torches" },
+        ],
+      },
+      {
+        label: "Wearables",
+        levelTwo: "wearables",
+        items: [
+          { label: "Premium Smartwatches", levelThree: "premium_smartwatches" },
+        ],
+      },
+      {
+        label: "Tech Accessories",
+        levelTwo: "tech_accessories",
+        items: [
+          {
+            label: "Shop All Tech Accessories",
+            levelThree: "shop_all_tech_accessories",
+          },
+          {
+            label: "Fast & Wireless Chargers",
+            levelThree: "fast_and_wireless_chargers",
+          },
+          { label: "Power Banks", levelThree: "power_banks" },
+          { label: "Storage Devices", levelThree: "storage_devices" },
+          { label: "Cables & Connectors", levelThree: "cables_and_connectors" },
+          { label: "Memory Cards", levelThree: "memory_cards" },
         ],
       },
     ],
@@ -883,6 +891,15 @@ const categories = [
         ],
       },
       {
+        label: "Watches",
+        levelTwo: "watches",
+        items: [
+          { label: "For Him", levelThree: "watches_for_him" },
+          { label: "For Her", levelThree: "watches_for_her" },
+        ],
+      },
+
+      {
         label: "Luggage & Trolleys",
         levelTwo: "luggage_and_trolleys",
         items: [
@@ -902,12 +919,14 @@ const categories = [
           { label: "Wheeled Duffel Bags", levelThree: "wheeled_duffel_bags" },
         ],
       },
+
       {
-        label: "Watches",
-        levelTwo: "watches",
+        label: "Fashion Accessories",
+        levelTwo: "fashion_accessories",
         items: [
-          { label: "For Him", levelThree: "watches_for_him" },
-          { label: "For Her", levelThree: "watches_for_her" },
+          { label: "Belts", levelThree: "belts" },
+          { label: "Ties & Cufflinks", levelThree: "ties_and_cufflinks" },
+          { label: "Socks", levelThree: "socks" },
         ],
       },
       {
@@ -916,15 +935,6 @@ const categories = [
         items: [
           { label: "Sunglasses", levelThree: "sunglasses" },
           { label: "Eye Glasses", levelThree: "eye_glasses" },
-        ],
-      },
-      {
-        label: "Fashion Accessories",
-        levelTwo: "fashion_accessories",
-        items: [
-          { label: "Belts", levelThree: "belts" },
-          { label: "Ties & Cufflinks", levelThree: "ties_and_cufflinks" },
-          { label: "Socks", levelThree: "socks" },
         ],
       },
     ],

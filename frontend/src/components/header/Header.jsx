@@ -13,7 +13,7 @@ const Header = () => {
 
 
   return (
-    <div className="w-full fixed inset-0 z-50 bg-[#212121] transition-all duration-300 ease-in-out h-[135px] sm:h-[100px]">
+    <div className="w-full sticky inset-0 z-50 bg-[#212121] transition-all duration-300 ease-in-out h-[135px] sm:h-[100px]">
       {/* Header Container */}
       <div className="flex items-center justify-between max-w-full sm:max-w-[95%] lg:max-w-[90%] w-full h-[100px] mx-auto gap-2 sm:gap-4 md:gap-6 px-2 sm:px-4 md:px-6">
         {/* Logo */}

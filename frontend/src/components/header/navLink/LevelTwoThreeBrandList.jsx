@@ -10,7 +10,7 @@ const LevelTwoThreeBrandList = ({ item }) => {
         {item.items.map((subItem) => (
           <p
             key={subItem.levelThree}
-            className="text-[14px] font-semibold text-gray-600 cursor-pointer hover:text-[#ff258b]"
+            className="text-[14px] w-24 lg:w-full text-wrap font-semibold text-gray-600 cursor-pointer hover:text-[#ff258b]"
           >
             {subItem.label}
           </p>

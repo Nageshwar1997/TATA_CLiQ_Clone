@@ -10,7 +10,7 @@ import LevelTwoThreeBrandList from "./navLink/LevelTwoThreeBrandList";
 
 const BottomNavbar = () => {
   const [categoryDropdown, setCategoryDropdown] = useState(false);
-  const [brandDropdown, setBrandDropdown] = useState(false);
+  const [brandDropdown, setBrandDropdown] = useState(true);
   const [selectedCategoryIndex, setSelectedCategoryIndex] = useState(0);
   const [selectedBrandIndex, setSelectedBrandIndex] = useState(0);
 
@@ -78,12 +78,12 @@ const BottomNavbar = () => {
       {/* Category Dropdown Menu */}
       {categoryDropdown && (
         <div
-          className="absolute top-[60px] left-0 w-full text-gray-500 bg-white rounded-lg shadow-lg p-4 flex flex-col sm:flex-row"
+          className="absolute top-[60px] h-[100vh] sm:h-[85vh] left-0 w-full text-gray-500 bg-white rounded-lg shadow-lg p-4 flex flex-col sm:flex-row"
           onMouseEnter={() => setCategoryDropdown(true)}
           onMouseLeave={() => setCategoryDropdown(false)}
         >
           {/* Level One Categories */}
-          <div className="w-full sm:w-[18%] h-[100vh] sm:h-[85vh] md:border-r border-gray-400 pr-4">
+          <div className="w-full sm:w-[18%] md:border-r border-gray-400 pr-4">
             {categories.map((category, index) => (
               <div
                 key={category.levelOne}
@@ -105,7 +105,7 @@ const BottomNavbar = () => {
           </div>
 
           {/* Level Two and Level Three Items */}
-          <div className="h-[100vh] sm:h-[85vh] w-full sm:w-[calc(100%-20%)] px-4 flex flex-col gap-2 flex-wrap">
+          <div className="w-full sm:w-[calc(100%-20%)] px-4 flex flex-col gap-2 flex-wrap">
             {categories[selectedCategoryIndex].items.map((item) => (
               <LevelTwoThreeCategoryList key={item.levelTwo} item={item} />
             ))}
@@ -116,16 +116,16 @@ const BottomNavbar = () => {
       {/* Brand Dropdown Menu */}
       {brandDropdown && (
         <div
-          className="absolute top-[60px] left-0 w-full text-gray-500 bg-white rounded-lg shadow-lg flex flex-col sm:flex-row justify-between"
+          className="absolute top-[60px] h-[100vh] sm:h-[85vh] left-0 w-full text-gray-500 bg-white rounded-lg shadow-lg flex flex-col sm:flex-row justify-between"
           onMouseEnter={() => setBrandDropdown(true)}
           onMouseLeave={() => setBrandDropdown(false)}
         >
           {/* Level One Brands */}
-          <div className="w-full sm:w-[22%] h-[100vh] sm:h-[85vh] text-sm lg:text-lg px-4 md:border-r border-gray-400">
+          <div className="w-full sm:w-[22%] text-sm lg:text-lg px-4 md:border-r border-gray-400">
             {brands.map((brand, index) => (
               <div
                 key={brand.levelOne}
-                className={`py-5 cursor-pointer flex items-center justify-between ${
+                className={`py-5 px-2 cursor-pointer flex items-center justify-between ${
                   selectedBrandIndex === index
                     ? "text-black shadow-md border-none"
                     : "border-b border-gray-400"
@@ -143,14 +143,14 @@ const BottomNavbar = () => {
           </div>
 
           {/* Level Two and Level Three Items */}
-          <div className="h-[100vh] sm:h-[85vh] w-full sm:w-[calc(100%-60%)] pt-2 px-2 flex flex-col gap-2 flex-wrap text-sm lg:text-lg">
+          <div className="w-full sm:w-[calc(100%-60%)] pt-2 px-2 flex flex-col gap-2 flex-wrap text-sm lg:text-lg">
             {brands[selectedBrandIndex].items.map((item) => (
               <LevelTwoThreeBrandList key={item.levelTwo} item={item} />
             ))}
           </div>
 
           {/* Brand Images */}
-          <div className="hidden sm:grid w-full sm:w-[35%] md:w-[30%] lg:w-[25%] grid-cols-2 place-content-start gap-4 md:gap-6 bg-gray-50 shadow p-4">
+          <div className="hidden sm:grid w-full sm:w-[35%] md:w-[30%] lg:w-[25%] md:grid-cols-2 place-content-start gap-4 md:gap-6 bg-gray-50 shadow p-4">
             {brands[selectedBrandIndex].brandImages.map((image) => (
               <div
                 key={image.alt}

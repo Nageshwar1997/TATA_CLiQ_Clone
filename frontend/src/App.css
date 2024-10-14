@@ -1,6 +1,7 @@
 .scrollbar-none::-webkit-scrollbar {
     display: none;
 }
+
 /* Custom Scrollbar Styles */
 .custom-scrollbar::-webkit-scrollbar {
     width: 8px; /* Width of the scrollbar */
