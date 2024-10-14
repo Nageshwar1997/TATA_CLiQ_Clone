@@ -4,9 +4,9 @@ import Header from "./components/header/Header";
 
 function App() {
   return (
-    <div className="max-w-full max-h-screen min-h-screen w-full h-full">
+    <div className="w-full max-h-screen min-h-screen h-full overflow-y-scroll scrollbar-none relative">
       <Header />
-      <main className="w-full h-full scrollbar-none">
+      <main className="w-full h-full">
         <Outlet />
       </main>
     </div>

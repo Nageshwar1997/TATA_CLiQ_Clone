@@ -5,6 +5,7 @@ import { HiOutlineBell, HiOutlineCurrencyRupee } from "react-icons/hi";
 import { LuShoppingBag } from "react-icons/lu";
 import { MdOutlineCardGiftcard } from "react-icons/md";
 import { CgMoreO } from "react-icons/cg";
+import { Link } from "react-router-dom";
 
 const TopNavbar = () => {
   const [isDropdownOpen, setDropdownOpen] = useState(false);
@@ -74,9 +75,9 @@ const TopNavbar = () => {
             >
               <TiArrowSortedUp className="absolute top-[-18px] right-8 sm:right-10 text-3xl text-white" />
               <div className="flex flex-col space-y-2 px-2 sm:px-4">
-                <div className="py-3 cursor-pointer bg-red-600 text-white rounded-lg text-center hover:bg-red-700 transition text-[14px] sm:text-[16px]">
+                <Link to={"/login"} className="py-3 cursor-pointer bg-primary_color text-white rounded-lg text-center hover:bg-secondary_color transition text-[14px] sm:text-[16px]">
                   Login / Register
-                </div>
+                </Link>
                 <div className="px-2 py-2 cursor-pointer rounded-lg hover:bg-gray-100 transition flex items-center space-x-2 text-[13px] sm:text-[15px]">
                   <FaRegUserCircle className="w-4 h-4 sm:w-5 sm:h-5" />
                   <span>My Account</span>

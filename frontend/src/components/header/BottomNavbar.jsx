@@ -10,7 +10,7 @@ import LevelTwoThreeBrandList from "./navLink/LevelTwoThreeBrandList";
 
 const BottomNavbar = () => {
   const [categoryDropdown, setCategoryDropdown] = useState(false);
-  const [brandDropdown, setBrandDropdown] = useState(true);
+  const [brandDropdown, setBrandDropdown] = useState(false);
   const [selectedCategoryIndex, setSelectedCategoryIndex] = useState(0);
   const [selectedBrandIndex, setSelectedBrandIndex] = useState(0);
 

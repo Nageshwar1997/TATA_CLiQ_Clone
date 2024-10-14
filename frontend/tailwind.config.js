@@ -11,6 +11,10 @@ module.exports = {
         xl: "1280px",
         "2xl": "1536px",
       },
+      colors: {
+        primary_color: "#ff4080",
+        secondary_color: "#dd4678",
+      },
     },
   },
   plugins: [],
