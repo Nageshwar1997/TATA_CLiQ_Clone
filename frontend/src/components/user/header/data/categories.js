@@ -457,7 +457,7 @@ const categories = [
     ],
   },
   {
-    label: "Home and Kitchen",
+    label: "Home & Kitchen",
     levelOne: "home_and_kitchen",
     items: [
       {
