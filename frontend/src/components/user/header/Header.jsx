@@ -11,7 +11,6 @@ const Header = () => {
   const [categoryDropdown, setCategoryDropdown] = useState(false);
   const [brandDropdown, setBrandDropdown] = useState(false);
 
-  const handleSearchInput = () => {};
 
   return (
     <div className="w-full fixed inset-0 z-50 bg-[#212121] transition-all duration-300 ease-in-out h-[135px] sm:h-[100px]">

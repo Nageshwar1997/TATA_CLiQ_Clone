@@ -1,6 +1,4 @@
-import React, { useEffect, useState } from "react";
-import { FaAngleRight } from "react-icons/fa";
-import categories from "../data/categories";
+import React, { useState } from "react";
 import brands from "../data/brands";
 
 const Brands = () => {
@@ -15,7 +13,6 @@ const Brands = () => {
   const handleSubBrandClick = (index) => {
     setSelectedSubBrandIndex(index);
   };
-
 
   return (
     <div className="flex w-full h-full">

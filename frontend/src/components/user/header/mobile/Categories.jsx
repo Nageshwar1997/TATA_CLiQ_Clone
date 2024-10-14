@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { FaAngleRight } from "react-icons/fa";
 import categories from "../data/categories";
 
 const Categories = () => {
