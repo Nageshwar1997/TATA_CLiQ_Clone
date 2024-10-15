@@ -4,9 +4,9 @@ const UserSchema = new Schema(
   {
     firstName: { type: String, required: true },
     lastName: { type: String, required: true },
-    email: { type: String, required: true },
+    email: { type: String, required: true, unique: true },
     password: { type: String, required: true, minlength: 6 },
-    mobileNumber: { type: String, required: true },
+    mobileNumber: { type: Number, required: true, unique: true },
     profilePic: { type: String },
     addresses: [{ type: Schema.Types.ObjectId, ref: "Address" }],
     orders: [{ type: Schema.Types.ObjectId, ref: "Order" }],

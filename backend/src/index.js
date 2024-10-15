@@ -3,6 +3,7 @@ const express = require("express");
 const cors = require("cors");
 const parser = require("body-parser");
 const connectDB = require("./configs/db.config");
+const authRouter = require("./routes/customer/auth.routes");
 dotenv.config();
 
 const app = express();
@@ -21,6 +22,8 @@ app.use(
 app.get("/", (req, res) => {
   res.status(200).send("Welcome to Tata CLiQ API");
 });
+
+app.use("/api/auth", authRouter);
 
 app.use((_, res) => {
   res.status(404).send("404 Not Found!");
