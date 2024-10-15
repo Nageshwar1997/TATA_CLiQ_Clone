@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { FaRegUserCircle } from "react-icons/fa";
 
 import PasswordInput from "../../components/authentication/PasswordInput";
 import EmailInput from "../../components/authentication/EmailInput";
@@ -10,6 +11,7 @@ const Register = () => {
   const [data, setData] = useState({
     firstName: "",
     lastName: "",
+    profilePic: "",
     dob: "",
     email: "",
     mobileNumber: "",
@@ -23,17 +25,44 @@ const Register = () => {
   return (
     <div className="pt-1">
       <div className="max-w-xl w-full mx-auto bg-white">
-        <form className="w-full flex flex-col items-center border px-5 py-4 shadow-lg rounded-2xl">
-          <h1 className="text-4xl font-bold text-center animate-bounce duration-1000 ease-in-out">
-            Welcome to Tata <br /> CL
-            <span className="text-primary_color">i</span>Q
-          </h1>
+        <form className="w-full flex flex-col items-center border px-5 py-3 shadow-lg rounded-2xl">
+          {/* Upload Image Section */}
+          <div className="relative mx-auto rounded-full flex justify-center items-center w-[80px] h-[80px] overflow-hidden bg-white">
+            <label
+              htmlFor="profilePic"
+              className="cursor-pointer w-full h-full"
+            >
+              <div className="w-full h-full flex justify-center items-center border-2 border-black rounded-full">
+                {data?.profilePic ? (
+                  <img
+                    src={data?.profilePic}
+                    alt="Sugar Logo"
+                    className="rounded-full object-cover w-full h-full"
+                  />
+                ) : (
+                  <FaRegUserCircle className="w-full h-full p-1 text-primary_color" />
+                )}
+              </div>
+              <form>
+                <div className="text-[10px] flex justify-center items-center w-full pb-3 bg-gray-100 absolute bottom-0 left-0 text-black">
+                  {data?.profilePic ? "Change Image" : "Upload Image"}
+                </div>
+                <input
+                  type="file"
+                  id="profilePic"
+                  name="profilePic"
+                  className="hidden"
+                />
+              </form>
+            </label>
+          </div>
 
-          <div className="w-[80%] flex justify-between gap-2 pb-4">
+          {/* Name Fields */}
+          <div className="w-[80%] flex flex-col sm:flex-row justify-between gap-2 pb-4">
             <div className="w-full">
               <label
                 htmlFor="firstName"
-                className="block text-lg font-medium text-gray-800 mb-1 cursor-pointer w-fit hover:text-primary_color"
+                className="block font-medium text-gray-800 mb-1 cursor-pointer w-fit hover:text-primary_color"
               >
                 First Name
               </label>
@@ -45,6 +74,9 @@ const Register = () => {
                   id="firstName"
                   placeholder="Enter your first name"
                   value={data?.firstName}
+                  onChange={(e) =>
+                    setData({ ...data, firstName: e.target.value })
+                  }
                   className={`p-3 w-full outline-none rounded-md text-gray-800 placeholder-gray-400`}
                 />
               </div>
@@ -52,7 +84,7 @@ const Register = () => {
             <div className="w-full">
               <label
                 htmlFor="lastName"
-                className="block text-lg font-medium text-gray-800 mb-1 cursor-pointer w-fit hover:text-primary_color"
+                className="block font-medium text-gray-800 mb-1 cursor-pointer w-fit hover:text-primary_color"
               >
                 Last Name
               </label>
@@ -64,11 +96,16 @@ const Register = () => {
                   id="lastName"
                   placeholder="Enter your last name"
                   value={data?.lastName}
+                  onChange={(e) =>
+                    setData({ ...data, lastName: e.target.value })
+                  }
                   className={`p-3 w-full outline-none rounded-md text-gray-800 placeholder-gray-400`}
                 />
               </div>
             </div>
           </div>
+
+          {/* Email, Mobile Number, Password and Confirm Password Inputs */}
           <div className="w-[80%]">
             <EmailInput
               data={data}
@@ -94,12 +131,15 @@ const Register = () => {
             />
           </div>
 
-          <div className="w-[80%] mx-auto">
+          {/* Register Button */}
+          <div className="w-[80%] mx-auto mb-3">
             <button className="w-full py-3 rounded-lg shadow-lg text-white text-lg bg-primary_color transition duration-300 ease-in-out hover:bg-secondary_color">
-              Register
+              Register / Login
             </button>
           </div>
-          <div className="flex space-x-2">
+
+          {/* Login Link */}
+          <div className="flex items-center space-x-2">
             <p>Already have an account?</p>
             <Link
               to={"/login"}

@@ -59,7 +59,7 @@ const BottomNavbar = () => {
         <div className="w-full">
           <input
             type="text"
-            placeholder="Search for Products, Brands, Categories"
+            placeholder="Search for Products..."
             className="w-full bg-transparent outline-none text-[#C4C4C4] text-sm sm:text-base"
           />
         </div>

@@ -16,7 +16,7 @@ const EmailInput = ({ data, setData, isValidEmail }) => {
     <div className="w-full mb-4">
       <label
         htmlFor="email"
-        className="block text-lg font-medium text-gray-800 mb-1 cursor-pointer w-fit hover:text-primary_color"
+        className="block font-medium text-gray-800 mb-1 cursor-pointer w-fit hover:text-primary_color"
       >
         Email
       </label>
